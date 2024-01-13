@@ -32,8 +32,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    /* padding: 0 1vw; */
-    background-color: yellowgreen;
+    padding: 0 1vw;
+    background-color: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -69,5 +69,12 @@ body {
     font-weight: 700;
     line-height: 1.2;
     margin: .5rem;
+}
+
+#menu-icon {
+    font-size: 4rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
 }
 
