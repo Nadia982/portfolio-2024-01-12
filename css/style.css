@@ -8,7 +8,7 @@
   border: none;
   scroll-behavior: smooth;
   font-family: "DM Sans", sans-serif;
-  border: 1px solid red;
+  border: 1px solid orange;
 }
 
 :root {
@@ -21,6 +21,7 @@
   --text-color: #ededed;
   /* --main-color: #7eadfc; - original */
   --main-color: #97bdfc;
+  --main-color-accent: #bed6fd;
 }
 
 html {
@@ -81,7 +82,52 @@ ul {
   color: var(--text-color);
   font-weight: 700;
   line-height: 1.2;
+  padding-left: 1rem;
   padding-right: 2rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.social-links a {
+    position: relative;
+    color: var(--text-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    /* background: var(--bg-color-primary); */
+    border: .2rem solid var(--text-color);
+    border-radius: 50%;
+    z-index: 1; 
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.social-links a:hover{
+    color: var(--bg-color-primary);
+}
+
+.social-links a::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%; 
+    background-color: var(--main-color);
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.social-links a:hover::before{
+    width: 100%;
 }
 
 #menu-icon {
@@ -125,7 +171,7 @@ section {
 }
 
 .home-content .text-animate h2 {
-  font-size: 4rem;
+  font-size: 6rem;
   font-weight: 700;
   color: transparent;
   -webkit-text-stroke: 0.7px var(--main-color);
@@ -162,11 +208,6 @@ section {
   overflow: hidden;
 }
 
-.btn-box .btn:nth-child(2) {
-  background: var(--bg-color-primary);
-  color: var(--main-color);
-}
-
 .btn-box .btn::before {
   content: "";
   position: absolute;
@@ -177,18 +218,21 @@ section {
   z-index: -1;
   transition: 0.5s;
 }
+
+.btn-box .btn:nth-child(2) {
+    background: var(--bg-color-primary);
+    color: var(--main-color);
+  }
+
 .btn-box .btn:nth-child(1)::before {
-  background-color: var(--bg-color-primary);
+  background-color: var(--main-color-accent);
 }
 
 .btn-box .btn:nth-child(2)::before {
   background-color: var(--bg-color-secondary);
 }
 
-.btn-box .btn:nth-child(1):hover {
-  color: var(--main-color);
-}
-
 .btn-box .btn:hover::before {
   width: 100%;
 }
+
