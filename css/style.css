@@ -13,7 +13,7 @@
 
 :root {
   --bg-color-primary: #05121c;
-  --navigation-background: rgba(5, 18, 28);
+  --navigation-background: rgb(5, 18, 28);
   /* --bg-color-primary: #081b29 - original; */
   --bg-color-secondary: #112e42;
   /* --bg-color-primary: #1e2019; */
@@ -46,14 +46,16 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--navigation-background);
+  min-height: 8vh;
+  background-color: var(--bg-color-primary);
+  display: block;
+  z-index: 9999;
 }
 
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 100;
   margin: 0 auto;
 }
 
@@ -259,13 +261,18 @@ section:nth-child(odd){
   padding-bottom: 6rem;
 }
 
+.about {
+  text-align: center;
+}
+
 .about h2 {
   font-size: 4.5rem;
 }
 
-.about {
-  text-align: center;
+.about h2 span {
+  color: var(--main-color);
 }
+
 
 .about-content p {
   font-size: 1.6rem;
